@@ -53,8 +53,8 @@ export default function Home() {
 
 	return (
 		<div className="min-h-screen w-full">
-			{/* Navigation (Hidden on Intro) */}
-			{currentView !== View.INTRO && (
+			{/* Navigation (Hidden on Intro and Preloader) */}
+			{currentView !== View.INTRO && currentView !== View.PRELOADER && (
 				<BottomNav currentView={currentView} setView={setCurrentView} />
 			)}
 
@@ -62,7 +62,9 @@ export default function Home() {
 			{/* md:pl-24 adds padding-left on desktop to account for the sidebar */}
 			<main
 				className={`min-h-screen transition-all duration-300 ${
-					currentView !== View.INTRO ? "md:pl-24 pb-20 md:pb-0" : ""
+					currentView !== View.INTRO && currentView !== View.PRELOADER
+						? "md:pl-24 pb-20 md:pb-0"
+						: ""
 				}`}>
 				{renderView()}
 			</main>
