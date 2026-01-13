@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Memories</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,container-queries"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@400;700&family=Dancing+Script:wght@400;700&family=DM+Serif+Display:ital@0;1&family=Gochi+Hand&display=swap" rel="stylesheet" />
+    
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#f4257b",
+              "background-light": "#fdfaf3",
+              "background-dark": "#221017",
+              "tape-pink": "#ff8ebc",
+              "tape-yellow": "#fde047",
+              parchment: "#fdfaf1",
+            },
+            fontFamily: {
+              display: ["Plus Jakarta Sans", "sans-serif"],
+              handwritten: ["Caveat", "cursive"],
+              fancy: ["Dancing Script", "cursive"],
+              serif: ["DM Serif Display", "serif"],
+              doodle: ["Gochi+Hand", "cursive"],
+            },
+            animation: {
+              'blob-bounce': 'blob-bounce 8s ease-in-out infinite',
+              'float': 'float 4s ease-in-out infinite',
+              'shake': 'shake 0.3s ease-in-out infinite',
+            },
+            keyframes: {
+              'blob-bounce': {
+                '0%, 100%': { borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%' },
+                '50%': { borderRadius: '30% 60% 70% 40% / 50% 60% 30% 60%' },
+              },
+              'float': {
+                '0%, 100%': { transform: 'translateY(0px) rotate(-1deg)' },
+                '50%': { transform: 'translateY(-10px) rotate(1deg)' },
+              },
+              'shake': {
+                '0%, 100%': { transform: 'rotate(0deg)' },
+                '25%': { transform: 'rotate(5deg)' },
+                '75%': { transform: 'rotate(-5deg)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        -webkit-tap-highlight-color: transparent;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+      .polaroid-shadow {
+          box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      }
+      .doodle-bg {
+          background-image: radial-gradient(#f4257b22 1px, transparent 0);
+          background-size: 24px 24px;
+      }
+      .ticket-cutout-left::before {
+          content: '';
+          position: absolute;
+          left: -12px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 24px;
+          height: 24px;
+          background-color: #f8f5f7;
+          border-radius: 50%;
+      }
+      .dark .ticket-cutout-left::before {
+          background-color: #221017;
+      }
+      .ticket-cutout-right::after {
+          content: '';
+          position: absolute;
+          right: -12px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 24px;
+          height: 24px;
+          background-color: #f8f5f7;
+          border-radius: 50%;
+      }
+      .dark .ticket-cutout-right::after {
+          background-color: #221017;
+      }
+      .perforated-line {
+          border-left: 2px dashed rgba(0,0,0,0.1);
+      }
+      /* Envelope 3D Transforms */
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      .preserve-3d {
+        transform-style: preserve-3d;
+      }
+      .backface-hidden {
+        backface-visibility: hidden;
+      }
+      .rotate-x-180 {
+        transform: rotateX(180deg);
+      }
+      .origin-top {
+        transform-origin: top;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+</head>
+  <body class="bg-background-light dark:bg-background-dark font-display text-[#181114] dark:text-white transition-colors duration-300 antialiased">
+    <div id="root"></div>
+  </body>
+</html>
