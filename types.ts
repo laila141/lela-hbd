@@ -1,8 +1,9 @@
 export enum View {
-  INTRO = 'INTRO',
-  GALLERY = 'GALLERY',
-  LETTER = 'LETTER',
-  COUPONS = 'COUPONS'
+	INTRO = "INTRO",
+	GALLERY = "GALLERY",
+	LETTER = "LETTER",
+	COUPONS = "COUPONS",
+	PRELOADER = "PRELOADER",
 }
 
 export interface Memory {
