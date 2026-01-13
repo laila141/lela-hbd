@@ -24,7 +24,7 @@ const IntroView: React.FC<IntroViewProps> = ({ onStart }) => {
 			{/* Header */}
 			<div className="w-full max-w-4xl flex justify-between items-center mb-10 px-4 relative z-20 absolute top-8">
 				<div className="rotate-[-5deg] font-handwritten text-2xl text-primary font-bold">
-					Chapter 25{" "}
+					Bab 25{" "}
 					<span className="material-symbols-outlined align-middle text-lg">
 						auto_awesome
 					</span>
@@ -44,8 +44,8 @@ const IntroView: React.FC<IntroViewProps> = ({ onStart }) => {
 
 					<div className="relative w-72 h-72 border-4 border-[#333] shadow-xl overflow-hidden bg-white animate-blob-bounce">
 						<img
-							src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2g6NLP_WsK4lydxKbXx6j6Um0E4JYYbNqGTMz3TleBA7BeXfJEaClYDDDgurWfN1MYKxzRQ1jZR6gPGHrcv6bi4DdFSxjXF7OJ1WHlMD2IalhLHDiXEWu-ZvDGIpJhsA0F_uRHCQnNflOwGGfw9g4mCGdrzmenLbstIXJrzwMuNtbV6HvYiooVGkygSBE6Z1CFC9ZN8btbGVX_zrJM11aAnojple9oMGm9c3pF7KMNe0r9oDbpVI_oHQSIlJauzTajxbOvAkULnZJ"
-							alt="Avatar"
+							src="/hero/front.jpeg"
+							alt="Laila Lukiyatunnikmah"
 							className="w-full h-full object-cover"
 						/>
 					</div>
@@ -69,7 +69,7 @@ const IntroView: React.FC<IntroViewProps> = ({ onStart }) => {
 				<div className="text-center md:text-left md:order-1 flex flex-col items-center md:items-start">
 					<div className="space-y-2">
 						<h2 className="font-handwritten text-3xl md:text-4xl text-primary leading-none -mb-4 md:ml-2">
-							happy birthday,
+							selamat ulang tahun,
 						</h2>
 						<h1 className="font-serif text-5xl md:text-7xl tracking-tighter text-gray-900 italic max-w-lg leading-tight">
 							Laila Lukiyatunnikmah
@@ -79,7 +79,7 @@ const IntroView: React.FC<IntroViewProps> = ({ onStart }) => {
 						</h1>
 						<div className="relative inline-block mt-4">
 							<p className="font-doodle text-xl md:text-2xl text-gray-600 max-w-[280px] md:max-w-md">
-								The adventure of a lifetime is just one click away...
+								Petualangan seumur hidup hanya berjarak satu klik...
 							</p>
 							<div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-32 h-2 bg-primary/10 rounded-full md:left-0 md:translate-x-0 md:w-full"></div>
 						</div>
@@ -92,7 +92,7 @@ const IntroView: React.FC<IntroViewProps> = ({ onStart }) => {
 							className="group relative flex items-center justify-center px-10 py-6 bg-primary text-white font-display text-xl tracking-wide shadow-[0_10px_0_0_#9d174d] hover:shadow-[0_5px_0_0_#9d174d] hover:translate-y-[5px] active:shadow-none active:translate-y-[10px] transition-all duration-150 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%]">
 							<span className="absolute top-3 right-5 w-4 h-4 bg-white/20 rounded-full blur-[2px]"></span>
 							<span className="flex items-center gap-3 font-bold">
-								EXPLORE SURPRISE
+								LIHAT KEJUTAN
 								<span className="material-symbols-outlined transition-transform group-hover:rotate-12">
 									map
 								</span>
@@ -113,7 +113,7 @@ const IntroView: React.FC<IntroViewProps> = ({ onStart }) => {
 						</div>
 					</div>
 					<p className="font-handwritten text-2xl text-gray-500">
-						With all my heart,{" "}
+						Sepenuh hatiku,{" "}
 						<span className="text-primary font-bold">Faisal</span>
 					</p>
 				</div>

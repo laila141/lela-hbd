@@ -10,21 +10,42 @@ import BottomNav from '../components/BottomNav';
 
 export default function Home() {
   const [currentView, setCurrentView] = useState<View>(View.INTRO);
+  const audioRef = React.useRef<HTMLAudioElement | null>(null);
 
-  const renderView = () => {
-    switch (currentView) {
-      case View.INTRO:
-        return <IntroView onStart={() => setCurrentView(View.GALLERY)} />;
-      case View.GALLERY:
-        return <GalleryView />;
-      case View.COUPONS:
-        return <CouponsView />;
-      case View.LETTER:
-        return <LetterView />;
-      default:
-        return <IntroView onStart={() => setCurrentView(View.GALLERY)} />;
-    }
-  };
+	React.useEffect(() => {
+		// Initialize audio
+		audioRef.current = new Audio("/tuyu.MP3");
+		audioRef.current.loop = true;
+
+		return () => {
+			if (audioRef.current) {
+				audioRef.current.pause();
+				audioRef.current = null;
+			}
+		};
+	}, []);
+
+	React.useEffect(() => {
+		// Play audio when entering GALLERY
+		if (currentView === View.GALLERY && audioRef.current) {
+			audioRef.current.play().catch((error) => {
+				console.log("Audio play failed (user interaction needed):", error);
+			});
+		}
+	}, [currentView]);
+
+	const renderView = () => {
+		switch (currentView) {
+			case View.INTRO:
+				return <IntroView onStart={() => setCurrentView(View.GALLERY)} />;
+			case View.GALLERY:
+				return <GalleryView />;
+			case View.LETTER:
+				return <LetterView />;
+			default:
+				return <IntroView onStart={() => setCurrentView(View.GALLERY)} />;
+		}
+	};
 
   return (
     <div className="min-h-screen w-full">
