@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import { View } from './types';
-import IntroView from './views/IntroView';
-import GalleryView from './views/GalleryView';
-import CouponsView from './views/CouponsView';
-import LetterView from './views/LetterView';
-import BottomNav from './components/BottomNav';
+"use client";
 
-const App: React.FC = () => {
+import React, { useState } from 'react';
+import { View } from '../types';
+import IntroView from '../views/IntroView';
+import GalleryView from '../views/GalleryView';
+import CouponsView from '../views/CouponsView';
+import LetterView from '../views/LetterView';
+import BottomNav from '../components/BottomNav';
+
+export default function Home() {
   const [currentView, setCurrentView] = useState<View>(View.INTRO);
 
   const renderView = () => {
@@ -25,8 +27,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen w-full bg-background-light dark:bg-background-dark text-[#181114] dark:text-white transition-colors duration-300">
-      
+    <div className="min-h-screen w-full">
       {/* Navigation (Hidden on Intro) */}
       {currentView !== View.INTRO && (
         <BottomNav currentView={currentView} setView={setCurrentView} />
@@ -37,9 +38,6 @@ const App: React.FC = () => {
       <main className={`min-h-screen transition-all duration-300 ${currentView !== View.INTRO ? 'md:pl-24 pb-20 md:pb-0' : ''}`}>
         {renderView()}
       </main>
-
     </div>
   );
-};
-
-export default App;
+}

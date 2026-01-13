@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+      display: none;
+  }
+  .scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+  }
+  .polaroid-shadow {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  .doodle-bg {
+      background-image: radial-gradient(#f4257b22 1px, transparent 0);
+      background-size: 24px 24px;
+  }
+  .ticket-cutout-left::before {
+      content: '';
+      position: absolute;
+      left: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      background-color: #f8f5f7;
+      border-radius: 50%;
+  }
+  .dark .ticket-cutout-left::before {
+      background-color: #221017;
+  }
+  .ticket-cutout-right::after {
+      content: '';
+      position: absolute;
+      right: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 24px;
+      height: 24px;
+      background-color: #f8f5f7;
+      border-radius: 50%;
+  }
+  .dark .ticket-cutout-right::after {
+      background-color: #221017;
+  }
+  .perforated-line {
+      border-left: 2px dashed rgba(0,0,0,0.1);
+  }
+  /* Envelope 3D Transforms */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .rotate-x-180 {
+    transform: rotateX(180deg);
+  }
+  .origin-top {
+    transform-origin: top;
+  }
+}
