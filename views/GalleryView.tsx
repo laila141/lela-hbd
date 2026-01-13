@@ -11,7 +11,7 @@ const memories: Memory[] = Array.from({ length: 114 }, (_, i) => {
 		date: "",
 		rotation: i % 2 === 0 ? "rotate-[1deg]" : "rotate-[-1deg]",
 	};
-});
+}).filter((memory) => memory.image !== "/images/images_2.avif");
 
 const GalleryView: React.FC = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
