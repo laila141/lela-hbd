@@ -27,6 +27,7 @@ ts-debug.log*
 
 # local env files
 .env*.local
+.env
 
 # vercel
 .vercel
@@ -34,3 +35,17 @@ ts-debug.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.suo
+*.ntvs
+*.njsproj
+*.sln
+*.sw?
